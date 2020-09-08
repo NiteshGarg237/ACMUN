@@ -1,0 +1,224 @@
+
+.header-nav {
+    grid-column: full-start / full-end;
+    grid-row: 1/2;
+
+    position: relative;
+    height: 10rem;
+    background: transparent;
+   // background-image: linear-gradient(rgba(15, 32, 39,.5), rgba(32, 58, 67,.5), rgba(44, 83, 100,.5));
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 1px rgba(255,255,255,1);
+    z-index: 100;
+
+}
+
+.logo-wrap {
+    width: 15rem;
+    height: 9.6rem;
+    margin-right: auto;
+    margin-left: 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 7rem;
+    height: 7rem;
+    margin-right: 1rem;
+    position: relative;
+    bottom: .3rem;
+
+    &__text {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1;
+    }
+}
+.nav {
+    list-style-type: none;
+    display: flex;
+
+    @media only screen and (max-width: 900px) 
+    {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        background-color: #fff;
+        color: $color-primary;
+        flex-direction: column;
+        justify-content: center;
+        transition: all .4s;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: #fff;
+
+        @media only screen and (max-width: 900px) 
+        {
+            color: $color-primary;
+        }
+
+        
+    }
+
+    &__item {
+        margin-right: 3.5rem;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: .5rem;
+            height: 3px;
+            width: 0;
+            background-color: $color-primary;
+            transition: width .2s;
+        }
+
+        &:hover::before, &:active::before {
+            width: 1rem;
+        }
+
+            @media only screen and (max-width: 900px) 
+            {
+               width: 100vw;
+               text-align: center;
+               padding: 1.5rem 2rem;
+               font-size: 2rem;
+                
+            }
+        
+
+        &:hover {
+            @media only screen and (max-width: 900px) 
+            {
+               
+                background-color: $color-primary;
+                color: #fff;
+            }
+        }
+
+        &:hover > .nav__link {
+            @media only screen and (max-width: 900px) 
+            {
+                color: #fff;
+            }
+        }
+    }
+
+    &:last-child {
+        margin-right: 5rem;
+        
+        @media only screen and (max-width: 900px) 
+        {
+            margin: 0;
+        }
+    }
+
+    &:not(:last-child) {
+        @media only screen and (max-width: 900px) 
+        {
+            margin: 0;
+        }
+    }
+
+    &__icon {
+        display: none;
+        width: 4.5rem;
+        height: 4.5rem;
+        fill: white;
+        margin-right: 3rem;
+
+        &:hover {
+            fill: $color-primary;
+        }
+
+        @media only screen and (max-width: 900px) 
+    {
+        display: block;
+    }
+
+    }
+}
+
+.slidenav {
+    width: 100%;
+    height: 85vh;
+}
+
+.header-carouel {
+    grid-column: full-start/full-end;
+    grid-row: 1/3;
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        z-index: 1;
+        background-image: linear-gradient(to right bottom,rgba(0, 0, 0, .5),rgba(0, 0, 0, .5));
+        background-size: cover;
+    }
+}
+
+.slider-text-wrap {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    z-index: 10;
+    margin: 0 .5rem;
+}
+
+
+.slider {
+    
+    &__heading {
+        margin-bottom: 2rem;
+        font-size: 4.5rem;
+        color: #fff;
+        z-index: 10;
+    }
+    &__quote{
+        font-size: 1.6rem;
+        color: $color-grey-light-1;
+        z-index: 10;
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////
+
+.header-info {
+    grid-column: full-start/full-end;
+    grid-row: 1/3;
+    font-size: 5rem;
+    background-attachment: fixed;
+
+    &__wrap {
+        position: absolute;
+        top: 30%;
+        left: 10%;
+        z-index: 10;
+        margin: 0 .5rem;
+    }
+
+    &__heading {
+        font-size: 4.5rem;
+        color: #fff;
+    }
+    &__quote{
+        font-size: 1.6rem;
+        color: #fff;
+    }
+}

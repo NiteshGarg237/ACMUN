@@ -1,0 +1,148 @@
+.about-us {
+    grid-column: center-start/center-end;
+    padding: 10rem 5vw;
+
+    &__heading {
+        font-size: 4rem;
+        color: $color-primary;
+    }
+    &__text {
+        font-size: 1.6rem;
+        color: $color-grey-dark-1;
+    }
+}
+
+.message-container
+{
+    grid-column: 1/-1;
+    background-color: $color-primary;
+
+    display: grid;
+    grid-template-rows: min-content;
+    grid-template-columns: [full-start] minmax(2rem,1fr) [center-start] repeat(8,[col-start]minmax(min-content,14rem) [col-end])[center-end] minmax(2rem,1fr) [full-end];
+    align-content: center;
+
+    @media only screen and (max-width: 650px) 
+        {
+            align-content: stretch;
+        }
+}
+
+.message {
+    background-color: #fff;
+    grid-column: center-start/center-end;
+    box-shadow: 0 .5rem 2rem rgba(0,0,0,.4);
+
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(8,1fr);
+
+    @media only screen and (max-width: 650px) 
+        {
+            grid-column: full-start/full-end;
+            height: 142rem;
+            box-shadow: none;
+        }
+
+    @media only screen and (max-width: 400px) 
+    {
+        height: 160rem;       
+    }
+    &__img {
+        width: 30rem;
+        height: auto;
+        grid-row: 2/4;
+        grid-column: 2/4;
+        outline: 2rem solid rgba($color-primary,.7);
+
+        @media only screen and (max-width: 750px) 
+        {
+            grid-column: 1/3;
+        }
+        @media only screen and (max-width: 600px)
+        {
+            grid-row: 1/3;
+            grid-column: 1/-1;
+            width: 95%;
+            height: 100%;
+            justify-self: center;
+            object-fit: cover;
+            display: block;
+        }
+    }
+    &__heading {
+        grid-row: 3/4;
+        grid-column: 4/-1;
+        width: 80%;
+        color: $color-primary;
+        font-size: 4rem;
+        justify-self: center;
+
+        @media only screen and (max-width: 900px) {
+            justify-self: end;
+        }
+
+        @media only screen and (max-width: 750px)
+        {
+            justify-self: center;
+            font-size: 3rem;
+        }
+
+        @media only screen and (max-width: 600px)
+        {
+            font-size: 4rem;
+            justify-self: center;
+            align-self: center;
+            grid-column: 1/-1;
+        }
+
+        @media only screen and (max-width: 400px)
+        {
+            justify-self: center;
+            font-size: 3rem;
+        }
+    }
+    &__text {
+        padding: 5vw;
+        grid-row: 4/-1;
+        grid-column: 2/-1;
+        font-size: 1.7rem;
+        justify-self: center;
+        align-self: start;
+        width: 80%;
+        font-weight: 600;
+        background-color: rgba($color-primary,.3);
+        vertical-align: middle;
+        text-align: justify;
+
+        @media only screen and (max-width: 900px) {
+            grid-column: 1/-1;
+        }
+
+        @media only screen and (max-width: 750px) 
+        {
+            width: 100%;
+            align-self: stretch;
+        }
+
+        
+        @media only screen and (max-width: 320px) 
+        {
+            font-size: 1.5rem;
+        }
+
+    }
+
+    &__regards {
+        display: block;
+        font-size: 1.8rem;
+        font-weight: 700;
+        padding-top: 1.5rem;
+
+        @media only screen and (max-width: 320px) 
+        {
+            font-size: 1.5rem;
+        }
+    }
+
+}
